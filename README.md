@@ -2,7 +2,7 @@
 
 > **E-Commerce Website** — Menghadirkan kopi premium terbaik dari seluruh Nusantara, dari petani langsung ke rumah Anda.
 
-    ![KopiNusantara Preview](/assets/Hero.png)
+    ![KopiNusantara Preview](public/assets/Hero.png)
 
 ---
 
