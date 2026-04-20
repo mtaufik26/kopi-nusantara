@@ -2,7 +2,7 @@
 
 > **E-Commerce Website** — Menghadirkan kopi premium terbaik dari seluruh Nusantara, dari petani langsung ke rumah Anda.
 
-![KopiNusantara Preview](https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?w=1200\&h=630\&fit=crop)
+    ![KopiNusantara Preview](Hero.png)
 
 ---
 
@@ -45,38 +45,16 @@
 
 ---
 
-## 📁 Struktur Proyek
-
-```
-nusantara-coffee/
-├── src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   ├── layout/
-│   │   │   ├── sections/
-│   │   │   └── ui/
-│   │   ├── lib/
-│   │   ├── styles/
-│   │   ├── layout.jsx
-│   │   └── page.jsx
-│   └── types/
-├── public/
-├── package.json
-└── README.md
-```
-
----
-
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/yourusername/nusantara-coffee.git
+git clone https://github.com/mtaufik26/kopi-nusantara.git
 cd nusantara-coffee
 npm install
 npm run dev
 ```
 
-Buka: http://localhost:3000
+Buka: https://coffee-nusantara.vercel.app
 
 ---
 
