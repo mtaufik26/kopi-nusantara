@@ -56,7 +56,6 @@ export default function Hero() {
                   <span>Ice Coffee</span>
                   <span className="w-1 h-1 rounded-full bg-gold/50" />
                   <span>Fresh & Chill</span>
-                  <Sparkles className="w-4 h-4" />
                 </span>
               </Badge>
             </motion.div>
@@ -64,7 +63,7 @@ export default function Hero() {
             {/* Headline */}
             <motion.h1
               variants={headline}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
             >
               <span className="text-white">{HERO_CONTENT.headline}</span>
               <br />
@@ -84,7 +83,7 @@ export default function Hero() {
             {/* Quote */}
             <motion.p
               variants={quote}
-              className="mt-3 text-gold/60 text-xs sm:text-sm italic font-serif"
+              className="mt-3 text-gold/60 text-xs sm:text-sm italic"
             >
               {HERO_CONTENT.quote}
             </motion.p>
@@ -123,7 +122,15 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-md xl:max-w-lg">
+            <div className="
+              relative w-full 
+              
+              max-w-[320px] 
+              sm:max-w-[380px] 
+              md:max-w-[440px] 
+              lg:max-w-xl 
+              xl:max-w-2xl
+            ">
 
               {/* Glow */}
               <div className="hidden sm:block absolute inset-0 bg-gradient-to-tr from-gold/20 to-transparent rounded-2xl blur-3xl" />

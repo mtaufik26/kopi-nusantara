@@ -18,43 +18,59 @@ const iconMap = { Users, Coffee, Award };
 
 export default function About() {
   return (
-    <section id="tentang" className="py-16 sm:py-20 md:py-28 bg-[#0f0f0f]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <section id="tentang" className="relative py-20 md:py-28 lg:py-32 bg-[#0f0f0f] overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* IMAGE */}
+          {/* IMAGE COLUMN */}
           <motion.div
             variants={imageColumn}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
-            className="relative"
+            className="relative group flex justify-center lg:block"
           >
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden">
+            <div className="
+              inline-block 
+              rounded-2xl shadow-2xl shadow-black/40 border border-white/5 p-3
+              ml-0
+              sm:ml-0
+              md:ml-10
+              lg:ml-25
+            ">
+              
               <img
                 src={IMAGES[0].src}
                 alt={IMAGES[0].alt}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                className="
+                  block h-auto rounded-xl object-contain 
+                  transition-transform duration-700 ease-out group-hover:scale-105
+
+                  w-full max-w-[260px]
+                  sm:max-w-[300px]
+                  md:max-w-[340px]
+                  lg:w-[400px]
+                "
               />
             </div>
 
-            <div className="absolute -bottom-5 -right-5 w-32 h-32 bg-gold/5 rounded-2xl -z-10" />
-            <div className="absolute -top-5 -left-5 w-24 h-24 border border-gold/20 rounded-2xl -z-10" />
           </motion.div>
 
-          {/* CONTENT */}
+          {/* CONTENT COLUMN */}
           <motion.div
             variants={contentColumn}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
+            className="relative"
           >
             {/* LABEL */}
             <motion.div
               variants={label}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/20 mb-4"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold/10 border border-gold/20 backdrop-blur-sm mb-5"
             >
-              <span className="text-[10px] text-gold tracking-wider uppercase font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+              <span className="text-[11px] text-gold tracking-widest uppercase font-medium">
                 {SECTION_LABEL}
               </span>
             </motion.div>
@@ -62,17 +78,17 @@ export default function About() {
             {/* HEADING */}
             <motion.h2
               variants={headline}
-              className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-[1.15] mb-6 tracking-tight"
             >
               <span className="text-white">{HEADLINE.main}</span>
               <br />
               <span className="text-gradient-gold">{HEADLINE.sub}</span>
             </motion.h2>
 
-            {/* DESCRIPTION (FIXED) */}
+            {/* DESCRIPTION */}
             <motion.div
               variants={description}
-              className="space-y-4 text-gray-300 text-sm sm:text-base leading-relaxed"
+              className="space-y-4 text-gray-300/90 text-sm sm:text-base leading-relaxed max-w-lg"
             >
               {HEADLINE.description.split('\n').map((text, i) => (
                 <p key={i}>{text}</p>
@@ -82,25 +98,66 @@ export default function About() {
             {/* STATS */}
             <motion.div
               variants={statsContainer}
-              className="grid grid-cols-3 gap-4 sm:gap-6 mt-8"
+              className="grid grid-cols-3 gap-4 mt-10"
             >
               {STATS.map((stat) => {
                 const Icon = iconMap[stat.icon];
-
                 return (
-                  <motion.div
-                    key={stat.label}
-                    variants={statItem}
-                    className="text-center p-3 rounded-xl bg-white/5 border border-white/10"
-                  >
-                    <Icon className="w-5 h-5 text-gold mx-auto mb-2" />
-                    <div className="text-xl sm:text-2xl font-serif font-bold text-gold">
-                      {stat.value}
-                    </div>
-                    <div className="text-[10px] text-gray-400 mt-1">
-                      {stat.label}
-                    </div>
-                  </motion.div>
+<motion.div
+  key={stat.label}
+  variants={statItem}
+  className="
+    group relative flex flex-col items-center text-center
+    
+    p-4 sm:p-5 md:p-6
+    
+    rounded-xl
+    bg-white/[0.03]
+    border border-white/10
+    
+    hover:border-gold/30 hover:bg-white/[0.06]
+    
+    backdrop-blur-sm
+    transition-all duration-300
+  "
+>
+  {/* Icon */}
+  <div className="
+    mb-3 
+    p-2.5 sm:p-3
+    
+    rounded-full
+    bg-gold/10 text-gold
+    
+    transition-all duration-300
+    group-hover:scale-110 group-hover:bg-gold/15
+  ">
+    <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" strokeWidth={1.5} />
+  </div>
+
+  {/* Value */}
+  <div className="
+    text-lg sm:text-xl md:text-2xl
+    
+    font-serif font-bold
+    text-gold
+    tracking-tight
+  ">
+    {stat.value}
+  </div>
+
+  {/* Label */}
+  <div className="
+    mt-1.5
+    
+    text-xs sm:text-sm
+    
+    text-gray-400
+    tracking-wide uppercase
+  ">
+    {stat.label}
+  </div>
+</motion.div>
                 );
               })}
             </motion.div>

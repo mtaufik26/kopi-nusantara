@@ -3,7 +3,7 @@ export const BEST_SELLER = {
   title: 'Ice Latte Gayo',
   subtitle: 'Fresh & Creamy',
   rating: 5,
-  reviews: '(1K+ yang udah coba)',
+  reviews: '(200+)',
   description:
     'Ice latte dengan kopi Gayo yang ringan dipadu susu creamy. Rasanya balance, dingin, dan enak diminum kapan aja tanpa bikin eneg.',
   features: ['Ice Coffee', 'Fresh Brew', 'Gak Pahit'],

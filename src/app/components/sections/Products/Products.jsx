@@ -30,7 +30,6 @@ export default function Products() {
             <span className="text-xs font-semibold text-gold uppercase tracking-wide">
               Menu Favorit
             </span>
-            <Sparkles className="w-3.5 h-3.5 text-gold" />
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold leading-tight">
             <span className="text-white">Produk</span>

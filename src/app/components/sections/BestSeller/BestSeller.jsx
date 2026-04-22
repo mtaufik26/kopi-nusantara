@@ -18,13 +18,43 @@ export default function BestSeller() {
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
-          {/* LEFT CONTENT */}
+          {/* RIGHT IMAGE (Mobile: atas) */}
+          <motion.div
+            variants={rightImage}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            className="relative flex justify-center order-1 lg:order-2 mb-6 lg:mb-0"
+          >
+            <div className="relative w-full max-w-md">
+              
+              {/* Image */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/60 bg-black/30">
+                <img
+                  src={BEST_SELLER.image}
+                  alt={BEST_SELLER.title}
+                  className="w-full h-auto object-contain transition duration-700 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              </div>
+
+              {/* Badge atas */}
+              <div className="absolute -top-3 -right-3 bg-black/80 rounded-full px-4 py-1 border border-gold/40">
+                <span className="text-xs text-gold flex items-center gap-1">
+                  <Coffee className="w-3.5 h-3.5" />
+                  Lagi Hits
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* LEFT CONTENT (Mobile: bawah) */}
           <motion.div
             variants={leftContent}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
-            className="space-y-6 text-center lg:text-left"
+            className="space-y-6 text-center lg:text-left order-2 lg:order-1"
           >
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30">
@@ -32,7 +62,6 @@ export default function BestSeller() {
               <span className="text-xs font-semibold text-gold uppercase tracking-wide">
                 {BEST_SELLER.badge}
               </span>
-              <Sparkles className="w-3.5 h-3.5 text-gold" />
             </div>
 
             {/* Title */}
@@ -87,7 +116,7 @@ export default function BestSeller() {
                 </span>
               </div>
 
-              {/* INFO (SUDAH FIX OFFLINE) */}
+              {/* Info */}
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start text-sm text-gray-400">
 
                 <div className="flex items-center gap-1.5">
@@ -101,54 +130,7 @@ export default function BestSeller() {
                     Bisa order via GoFood / GrabFood
                   </span>
                 </div>
-
-                <div className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5 text-gold/70" />
-                  <span className="text-xs">
-                    Fresh dibuat saat dipesan
-                  </span>
-                </div>
-
               </div>
-            </div>
-          </motion.div>
-
-          {/* RIGHT IMAGE */}
-          <motion.div
-            variants={rightImage}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-            className="relative flex justify-center"
-          >
-            <div className="relative w-full max-w-md">
-              
-              {/* Image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/60 bg-black/30">
-                <img
-                  src={BEST_SELLER.image}
-                  alt={BEST_SELLER.title}
-                  className="w-full h-auto object-contain transition duration-700 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-              </div>
-
-              {/* Badge atas */}
-              <div className="absolute -top-3 -right-3 bg-black/80 rounded-full px-4 py-1 border border-gold/40">
-                <span className="text-xs text-gold flex items-center gap-1">
-                  <Coffee className="w-3.5 h-3.5" />
-                  Lagi Hits 🔥
-                </span>
-              </div>
-
-              {/* Badge bawah */}
-              <div className="absolute -bottom-4 left-6 bg-black/60 rounded-full px-3 py-1 border border-white/10">
-                <span className="text-[10px] text-gray-300 flex items-center gap-1">
-                  <Sparkles className="w-2.5 h-2.5 text-gold" />
-                  Banyak yang repeat order
-                </span>
-              </div>
-
             </div>
           </motion.div>
 

@@ -21,5 +21,5 @@ export const STATS = [
 ];
 
 export const IMAGES = [
-  { src: '/assets/Aboute.png', alt: 'Ice coffee segar' },
+  { src: '/assets/About.png', alt: 'Ice coffee segar' },
 ];

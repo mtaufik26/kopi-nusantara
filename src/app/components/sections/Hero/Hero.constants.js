@@ -1,3 +1,4 @@
+// Hero.constants.js
 export const HERO_BADGE = {
   text: 'Ice Coffee • Fresh & Chill',
 };

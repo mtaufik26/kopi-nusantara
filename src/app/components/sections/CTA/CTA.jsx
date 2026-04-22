@@ -9,10 +9,17 @@ import { container, viewport } from "./CTA.animations";
 
 export default function CTA() {
   return (
-    <section className="relative py-20 sm:py-24 md:py-32 bg-gradient-to-br from-[#1a1512] to-[#0f0f0f] overflow-hidden">
-      {/* ✨ subtle top divider */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    <section className="relative py-20 sm:py-24 md:py-32 bg-gradient-to-br from-[#0f0f0f] via-[#0f0f0f]/60 overflow-hidden">
+      
+      {/* Divider */}
 
+      {/* 🔥 Blur Atas (pakai #0f0f0f) */}
+      <div className="absolute top-0 left-0 w-full h-32 sm:h-40 bg-gradient-to-b from-[#0f0f0f] via-[#0f0f0f]/60 to-transparent pointer-events-none" />
+
+      {/* 🔥 Blur Bawah (pakai #0f0f0f) */}
+      <div className="absolute bottom-0 left-0 w-full h-32 sm:h-40 bg-gradient-to-t from-black via-black to-transparent pointer-events-none" />
+
+      {/* CONTENT */}
       <div className="relative max-w-3xl mx-auto px-4 sm:px-6 md:px-8 text-center">
         
         <motion.div

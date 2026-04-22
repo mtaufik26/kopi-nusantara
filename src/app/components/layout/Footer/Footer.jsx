@@ -13,7 +13,13 @@ const iconMap = { FaInstagram, FaTwitter, FaTiktok, MapPin, Phone };
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-[#0a0a0a] border-t border-gold/10 py-12 sm:py-16">
+    <footer
+      id="contact"
+      className="relative bg-black py-12 sm:py-16 overflow-hidden"
+    >
+      {/* 🔥 Blur transisi dari CTA */}
+      {/* <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#0f0f0f] to-transparent pointer-events-none" /> */}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
 
         <motion.div
@@ -44,7 +50,11 @@ export default function Footer() {
             <ul className="space-y-2">
               {FOOTER_LINKS.quick.map((item) => (
                 <li key={item.name}>
-                  <motion.a variants={linkItem} href={item.href} className="text-gray-400 hover:text-gold text-sm">
+                  <motion.a
+                    variants={linkItem}
+                    href={item.href}
+                    className="text-gray-400 hover:text-gold text-sm transition-colors"
+                  >
                     {item.name}
                   </motion.a>
                 </li>
@@ -59,10 +69,14 @@ export default function Footer() {
               {FOOTER_LINKS.contact.map((c, i) => {
                 const Icon = iconMap[c.icon];
                 return (
-                  <motion.div key={i} variants={contactItem} className="flex items-center gap-2 text-gray-400 text-sm">
+                  <motion.li
+                    key={i}
+                    variants={contactItem}
+                    className="flex items-center gap-2 text-gray-400 text-sm"
+                  >
                     <Icon className="w-4 h-4 text-gold" />
                     {c.label}
-                  </motion.div>
+                  </motion.li>
                 );
               })}
             </ul>
@@ -71,7 +85,10 @@ export default function Footer() {
           {/* SOCIAL */}
           <motion.div>
             <h3 className="text-white font-semibold mb-4">Ikuti Kami</h3>
-            <motion.div variants={socialContainer} className="flex gap-4">
+            <motion.div
+              variants={socialContainer}
+              className="flex gap-4"
+            >
               {FOOTER_LINKS.social.map((s) => {
                 const Icon = iconMap[s.icon];
                 return (
